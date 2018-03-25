@@ -1,7 +1,7 @@
 <h1 align="center">ti.linkedin</h1>
 
 <div align="center">
-  <strong>An unofficial <img src="https://jmacg.files.wordpress.com/2013/04/linkedin-logo.png" style="height: 20px; margin-top: -3px"> module for Axway Appcelerator Titanium</strong>
+  <strong>An unofficial LinkedIn module for Axway Appcelerator Titanium</strong>
 </div>
 <div align="center">
   <sub>

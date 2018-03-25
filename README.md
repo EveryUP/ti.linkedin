@@ -1,7 +1,7 @@
 <h1 align="center">ti.linkedin</h1>
 
 <div align="center">
-  <strong>An unofficial LinkedIn module for Axway Appcelerator Titanium</strong>
+  <strong>An unofficial <img src="https://jmacg.files.wordpress.com/2013/04/linkedin-logo.png" style="height: 20px; margin-top: -3px"> module for Axway Appcelerator Titanium</strong>
 </div>
 <div align="center">
   <sub>
@@ -61,7 +61,9 @@ If you've already done these steps jump to the <a href="#usage">Usage section</a
 
 Go to the "Mobile" setting page, and configure your application Bundle ID value in your LinkedIn application settings.
 
-<img style="width: 100%; max-width: 500px; display: block; margin: 0 auto" src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/ios-bundle-ids.png">
+<div align="center">
+    <img style="width: 100%; max-width: 500px; display: block;" src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/ios-bundle-ids.png">
+</div>
 
 Now, pick the <i>Application Id</i> and write the following code inside your <i>tiapp.xml</i> under the `<ios>` section:
 
@@ -117,7 +119,9 @@ In a development scenario, you can use a development keystore shipped with the T
 
 Go to the "Mobile" setting page and, under the Android section, add your application package and the SHA1 generated in the previous step.
 
-<img style="width: 100%; max-width: 500px; display: block; margin: 0 auto" src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/package_hash_values.png">
+<div align="center">
+    <img style="width: 100%; max-width: 500px; display: block;" src="https://content.linkedin.com/content/dam/developer/global/en_US/site/img/package_hash_values.png">
+</div>
 
 ### Titanium setup
 

@@ -1,0 +1,5 @@
+iphone/build
+android/build
+iphone/ti.linkedin-iphone-*
+android/dist/ti.linkedin-android-*
+.DS_Store

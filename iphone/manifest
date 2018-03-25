@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+description: ti.linkedin
+author: Andrea Vitale
+license: MIT
+copyright: Copyright (c) 2017 by EveryUP SRL
+
+# these should not be edited
+name: ti.linkedin
+moduleid: ti.linkedin
+guid: 42a4497b-4b3c-4050-94c0-0bbca185c745
+platform: iphone
+minsdk: 6.3.0.GA

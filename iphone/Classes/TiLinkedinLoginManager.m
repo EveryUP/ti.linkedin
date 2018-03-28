@@ -11,6 +11,17 @@
 
 @implementation TiLinkedinLoginManager
 
++ (id)sharedInstance {
+    static TiLinkedinLoginManager* sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
 - (TiLinkedinLoginManager*)init {
     _profileFields = [NSArray arrayWithObjects:
                       @"id", @"first-name", @"last-name",
@@ -35,6 +46,8 @@
                                                                               success:^(LISDKAPIResponse *response) {
                                                                                   NSDictionary* data = [NSJSONSerialization JSONObjectWithData:[[response data] dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
                                                                                   NSString* uid = [data objectForKey:@"id"];
+                                                                                  
+                                                                                  _token = [[session accessToken] accessTokenValue];
                                                                                   
                                                                                   successHandler(@{
                                                                                                    @"success": NUMBOOL(YES),
@@ -61,6 +74,10 @@
                                                            @"error": [error description]
                                                         });
                                         }];
+}
+
+- (NSString*)token {
+    return _token;
 }
 
 #pragma mark Internals

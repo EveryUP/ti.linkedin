@@ -16,6 +16,7 @@
 - (void)authorize:(__unused id)unused;
 - (void)logout:(__unused id)unused;
 
+- (NSString *_Nullable)accessToken;
 - (NSNumber *_Nonnull) loggedIn;
 - (NSArray<NSString*> *_Nullable) permissions;
 

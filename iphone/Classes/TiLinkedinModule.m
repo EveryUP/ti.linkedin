@@ -62,8 +62,14 @@
 
 #pragma mark Properties
 
-- (NSNumber *)loggedIn {
+- (NSNumber *_Nonnull)loggedIn {
     return NUMBOOL([LISDKSessionManager hasValidSession]);
+}
+
+- (NSString *_Nullable)accessToken {
+    [self log:@"Getting access token" forLevel:@"info"];
+    
+    return [[TiLinkedinLoginManager sharedInstance] token];
 }
 
 - (NSArray<NSString*> *_Nullable) permissions {
@@ -90,7 +96,7 @@
 - (void)authorize:(__unused id)unused {
     ENSURE_UI_THREAD(authorize, unused);
     
-    TiLinkedinLoginManager* loginManager = [[TiLinkedinLoginManager alloc] init];
+    TiLinkedinLoginManager* loginManager = [TiLinkedinLoginManager sharedInstance];
     
     [loginManager authorize:_permissions
                successBlock:^(NSDictionary* payload) {

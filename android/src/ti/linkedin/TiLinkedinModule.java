@@ -98,6 +98,16 @@ public class TiLinkedinModule extends KrollModule {
 		return LISessionManager.getInstance(activity).getSession().isValid();
 	}
 
+	@Kroll.getProperty
+	public String accessToken() {
+		Activity activity = TiApplication.getInstance().getCurrentActivity();
+
+		if (LISessionManager.getInstance(activity).getSession().isValid())
+			return LISessionManager.getInstance(activity).getSession().getAccessToken().getValue();
+
+		return null;
+	}
+
 	@Kroll.setProperty(name="permissions")
 	public void setPermissions(String[] permissions) {
 		this.permissions = new Permissions(permissions);

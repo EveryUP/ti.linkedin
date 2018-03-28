@@ -171,7 +171,23 @@ Here is a short login example:
 	    Ti.API.info('User logged out.');
 	}
 
-Do you want a more complete example? Look a the sample app.js.
+Do you want a more complete example? Look a the sample [app.js](https://github.com/everyup/ti.linkedin/blob/master/example/app.js).
+
+After a successful authorize, you can get a valid oauth access token via `linkedin.accessToken` property.<br />
+As per the docs you can't forward and use this client token from your backend:
+
+```
+It is important to note that access tokens that are acquired via the Mobile SDK are only usable with the Mobile SDK, and cannot be used to make server-side REST API calls.
+Similarly, access tokens that you already have stored from your users that authenticated using a server-side REST API call will not work with the Mobile SDK.
+```
+
+But there is an easy way to do this. <br />
+Before to start a REST API call, simply set your request headers to:
+```
+"Authorization": "Bearer <YOUR_ACCESS_TOKEN>"
+"x-li-src": "msdk"
+```
+and you will get a valid response.
 
 ## API
 
@@ -193,6 +209,7 @@ Do you want a more complete example? Look a the sample app.js.
 
 #### Properties
 
+- `accessToken` OAuth token set after a successful authorize
 - `loggedIn` Indicates if the user is logged in
 - `permissions` Array of permissions to request for your app. Be sure the permissions you want are set before calling authorize.
 

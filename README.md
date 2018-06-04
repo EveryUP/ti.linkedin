@@ -153,7 +153,8 @@ Here is a short login example:
 
 	linkedin.addEventListener('login', onLogin);
     linkedin.addEventListener('logout', onLogout);
-
+	
+	linkedin.initialize();
 	linkedin.authorize();
 
 	function onLogin(event) {
